@@ -179,6 +179,12 @@ cd game-day-notifications
 <img width="1302" height="285" alt="gd-lambda-role" src="https://github.com/user-attachments/assets/45c92854-6ae7-4ba4-910c-f4e0fe797fa6" />
 <img width="1297" height="471" alt="function" src="https://github.com/user-attachments/assets/7fdc5795-80b3-443e-8d42-d099cd3b84c5" />
 <img width="1317" height="382" alt="event-bridge" src="https://github.com/user-attachments/assets/9b998741-d378-4e02-ac85-80e856b7205a" />
+<img width="1163" height="167" alt="venv-local" src="https://github.com/user-attachments/assets/3e4e1a0e-311d-440e-b37d-485d42366347" />
+<img width="1132" height="232" alt="published" src="https://github.com/user-attachments/assets/8f06402b-9ada-4ae1-8044-a5e58d8ff603" />
+<img width="1848" height="849" alt="email" src="https://github.com/user-attachments/assets/b5fe1db0-4356-42b9-889c-f8b90528564b" />
+
+
+
 
 
 
