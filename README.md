@@ -45,6 +45,8 @@ game-day-notifications/
 ├── policies/
 │   └── gd_sns_policy.json           # SNS publishing permissions
 ├── .env                             # Environment variables (not committed)
+├── requirements.txt                 # Python dependencies for local development
+├── test_local.py                    # Local testing script
 ├── .gitignore
 └── README.md                        # Project documentation
 ```
@@ -63,6 +65,45 @@ cd game-day-notifications
    - `SNS_TOPIC_ARN`: Your AWS SNS topic ARN
    - `AWS_DEFAULT_REGION`: Your AWS region
 2. The `.env` file is for reference only and not committed to version control for security.
+
+### **Set Up Local Development Environment (Optional)**
+
+**Why Use a Virtual Environment:**
+- **Isolates dependencies** - Prevents conflicts with other Python projects
+- **Clean environment** - Only installs required packages
+- **Reproducible setup** - Ensures consistent dependency versions
+- **Safe testing** - Won't affect your system Python installation
+
+**Understanding Dependencies:**
+- **boto3** - AWS SDK for Python (required for SNS operations)
+- **python-dotenv** - Loads environment variables from .env file
+- **Note:** boto3 is pre-installed in AWS Lambda but needed for local testing
+
+**Create and Activate Virtual Environment:**
+```bash
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate  # Linux/Mac/WSL
+# or
+venv\Scripts\activate     # Windows
+
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
+
+# When done, deactivate
+deactivate
+```
+
+**What's in requirements.txt:**
+```txt
+# AWS SDK for Python - required for SNS client
+boto3>=1.26.0
+
+# Python-dotenv for loading .env file in local development
+python-dotenv>=1.0.0
+```
 
 ### **Create an SNS Topic**
 1. Open the AWS Management Console.
@@ -144,6 +185,38 @@ cd game-day-notifications
 4. Verify that SMS/Email notifications are sent to the subscribed users.
 5. Check the function output for successful API calls and SNS publishing.
 
+### **Local Testing (Optional)**
+
+**Test the Lambda function locally before deploying:**
+
+1. **Set up AWS credentials** (required for SNS access):
+```bash
+# Option 1: AWS CLI (recommended)
+aws configure
+
+# Option 2: Environment variables
+export AWS_ACCESS_KEY_ID=your_access_key
+export AWS_SECRET_ACCESS_KEY=your_secret_key
+```
+
+2. **Run the local test script**:
+```bash
+# Activate virtual environment
+source venv/bin/activate
+
+# Run local test
+python test_local.py
+```
+
+**What the local test does:**
+- Loads environment variables from `.env` file
+- Validates required configuration
+- Executes the Lambda function locally
+- **Sends real notifications** to your SNS topic subscribers
+- Displays execution results and any errors
+
+**Note:** Local testing will send actual emails/SMS to your subscribers, just like the deployed Lambda function.
+
 ### **Troubleshooting**
 
 **Common Reasons You Might Not Be Getting Notifications:**
@@ -155,6 +228,7 @@ cd game-day-notifications
 5. **Wrong Environment Variables** - Verify `NBA_API_KEY` and `SNS_TOPIC_ARN` are correct in Lambda
 6. **API Key Issues** - Ensure your SportsData.io API key is valid and not expired
 7. **SNS Topic Permissions** - Verify Lambda has permission to publish to your SNS topic
+8. **boto3 Module Not Found** - For local testing, install dependencies with `pip install -r requirements.txt`
 
 **Quick Troubleshooting Steps:**
 
@@ -163,6 +237,7 @@ cd game-day-notifications
 3. **Verify SNS Subscription** - Ensure email subscription shows "Confirmed" status in SNS console
 4. **Check NBA Schedule** - Verify there are actually games scheduled for today
 5. **Test SNS Directly** - Send a test message from SNS console to confirm email delivery works
+6. **Run Local Test** - Use `python test_local.py` to test the function locally with your actual AWS resources
 
 
 ### **What We Learned**
