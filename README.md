@@ -45,6 +45,7 @@ game-day-notifications/
 │   └── gd_notifications.py          # Main Lambda function code
 ├── policies/
 │   └── gd_sns_policy.json           # SNS publishing permissions
+├── .env                             # Environment variables (not committed)
 ├── .gitignore
 └── README.md                        # Project documentation
 ```
@@ -56,6 +57,13 @@ game-day-notifications/
 git clone https://github.com/gus-hub-tech/game-day-notifications.git
 cd game-day-notifications
 ```
+
+### **Configure Environment Variables**
+1. Copy the `.env` file and update with your actual values:
+   - `NBA_API_KEY`: Your SportsData.io API key
+   - `SNS_TOPIC_ARN`: Your AWS SNS topic ARN
+   - `AWS_DEFAULT_REGION`: Your AWS region
+2. The `.env` file is for reference only and not committed to version control for security.
 
 ### **Create an SNS Topic**
 1. Open the AWS Management Console.
@@ -148,4 +156,5 @@ cd game-day-notifications
 ### **Future Enhancements**
 1. Add NFL score alerts for extended functionality.
 2. Store user preferences (teams, game types) in DynamoDB for personalized alerts.
-3. Implement a web UI
+3. Implement a web UI for subscription management.
+4. Refactor Lambda function to use `NBA_API_BASE_URL` environment variable for improved configurability and easier API endpoint management.
