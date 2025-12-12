@@ -144,6 +144,26 @@ cd game-day-notifications
 4. Verify that SMS/Email notifications are sent to the subscribed users.
 5. Check the function output for successful API calls and SNS publishing.
 
+### **Troubleshooting**
+
+**Common Reasons You Might Not Be Getting Notifications:**
+
+1. **No Games Today** - NBA season runs October-June, no games during off-season
+2. **EventBridge Not Triggered** - Check if your scheduled rule has actually fired
+3. **Email Subscription Not Confirmed** - Must click confirmation link in initial SNS email
+4. **Lambda Errors** - Check CloudWatch Logs for API or permission issues
+5. **Wrong Environment Variables** - Verify `NBA_API_KEY` and `SNS_TOPIC_ARN` are correct in Lambda
+6. **API Key Issues** - Ensure your SportsData.io API key is valid and not expired
+7. **SNS Topic Permissions** - Verify Lambda has permission to publish to your SNS topic
+
+**Quick Troubleshooting Steps:**
+
+1. **Manual Test** - Run the Lambda function manually with a test event to bypass EventBridge
+2. **Check CloudWatch Logs** - Look for errors, API responses, or successful SNS publishing
+3. **Verify SNS Subscription** - Ensure email subscription shows "Confirmed" status in SNS console
+4. **Check NBA Schedule** - Verify there are actually games scheduled for today
+5. **Test SNS Directly** - Send a test message from SNS console to confirm email delivery works
+
 
 ### **What We Learned**
 1. Designing a notification system with AWS SNS and Lambda.
