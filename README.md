@@ -44,6 +44,7 @@ game-day-notifications/
 │   └── gd_notifications.py          # Main Lambda function code
 ├── policies/
 │   └── gd_sns_policy.json           # SNS publishing permissions
+├── venv/                            # Virtual environment (not committed)
 ├── .env                             # Environment variables (not committed)
 ├── requirements.txt                 # Python dependencies for local development
 ├── test_local.py                    # Local testing script
