@@ -1,0 +1,7 @@
+# NBA Game Day Notifications - Local Development Dependencies
+
+# AWS SDK for Python - required for SNS client
+boto3>=1.26.0
+
+# Python-dotenv for loading .env file in local development (optional)
+python-dotenv>=1.0.0
