@@ -24,7 +24,6 @@ The system demonstrates modern serverless patterns with automated scheduling, ex
 ## **Technical Architecture**
 ![nba_API](https://github.com/user-attachments/assets/5e19635e-0685-4c07-9601-330f7d1231f9)
 
-
 ---
 
 
@@ -151,6 +150,16 @@ cd game-day-notifications
 2. Securing AWS services with least privilege IAM policies.
 3. Automating workflows using EventBridge.
 4. Integrating external APIs into cloud-based workflows.
+
+### **Demo Images**
+
+<img width="1317" height="268" alt="sns-topic" src="https://github.com/user-attachments/assets/1ee3be16-4ebb-4207-8ddf-5964a1a978ee" />
+<img width="1303" height="397" alt="sub" src="https://github.com/user-attachments/assets/1924179b-c4c1-4d3d-9e86-5b631e041a0e" />
+<img width="1308" height="257" alt="sns-policy" src="https://github.com/user-attachments/assets/03bf1f4c-99a7-4d6e-83ad-ee487238ae39" />
+<img width="1302" height="285" alt="gd-lambda-role" src="https://github.com/user-attachments/assets/45c92854-6ae7-4ba4-910c-f4e0fe797fa6" />
+<img width="1297" height="471" alt="function" src="https://github.com/user-attachments/assets/7fdc5795-80b3-443e-8d42-d099cd3b84c5" />
+<img width="1317" height="382" alt="event-bridge" src="https://github.com/user-attachments/assets/9b998741-d378-4e02-ac85-80e856b7205a" />
+
 
 
 ### **Future Enhancements**
