@@ -1,7 +1,11 @@
 # NBA Game Day Notifications / Sports Alerts System
 
 ## **Project Overview**
-This project is an alert system that sends real-time NBA game day score notifications to subscribed users via SMS/Email. It leverages **Amazon SNS**, **AWS Lambda and Python**, **Amazon EvenBridge** and **NBA APIs** to provide sports fans with up-to-date game information. The project demonstrates cloud computing principles and efficient notification mechanisms.
+
+NBA Game Day Notifications is a fully serverless cloud-native alert system that delivers real-time NBA game scores and updates to subscribers via SMS and email. The system automatically fetches live game data from the SportsData.io API and distributes formatted notifications using AWS managed services.
+
+The system demonstrates modern serverless patterns with automated scheduling, external API integration, and multi-channel notification delivery, making it cost-effective and maintenance-free for sports fans wanting real-time NBA updates
+
 
 ---
 
